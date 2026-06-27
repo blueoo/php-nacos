@@ -78,6 +78,18 @@ class NacosConfig
     private static $isDebug = false;
 
     /**
+     * 连接超时时间
+     * @var int
+     */
+    private static $connectTimeout = 5;
+
+    /**
+     * 超时时间
+     * @var int
+     */
+    private static $timeout = 10;
+
+    /**
      * @return string
      */
     public static function getName()
@@ -243,5 +255,37 @@ class NacosConfig
     public static function setIsDebug($isDebug)
     {
         self::$isDebug = $isDebug;
+    }
+
+    /**
+     * @return int
+     */
+    public static function getConnectTimeout()
+    {
+        return self::$connectTimeout;
+    }
+
+    /**
+     * @param int $connectTimeout
+     */
+    public static function setConnectTimeout($connectTimeout)
+    {
+        self::$connectTimeout = $connectTimeout;
+    }
+
+    /**
+     * @return int
+     */
+    public static function getTimeout()
+    {
+        return self::$timeout;
+    }
+
+    /**
+     * @param int $timeout
+     */
+    public static function setTimeout($timeout)
+    {
+        self::$timeout = $timeout;
     }
 }

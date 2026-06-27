@@ -54,7 +54,11 @@ abstract class Request
             $this->getUri(),
             $parameterList,
             $headers,
-            ['debug' => NacosConfig::getIsDebug()]
+            [
+                'debug' => NacosConfig::getIsDebug(),
+                'connect_timeout' => NacosConfig::getConnectTimeout(),
+                'timeout' => NacosConfig::getTimeout(),
+            ]
         );
 
         if (isset(ErrorCodeEnum::getErrorCodeMap()[$response->getStatusCode()])) {
